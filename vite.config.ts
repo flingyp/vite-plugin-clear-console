@@ -10,5 +10,5 @@ export default defineConfig({
       fileName: 'bundle'
     }
   },
-  plugins: [dts({ include: './core' })]
+  plugins: [dts({ include: './core', outputDir: ['dist/types'] })]
 })

@@ -5,7 +5,7 @@
 	"description": "the plugin is used to clear all console output in the production environment",
 	"main": "./dist/bundle.umd.js",
 	"module": "./dist/bundle.mjs",
-	"types": "./dist/index.d.ts",
+	"types": "./dist/types/index.d.ts",
 	"files": [
 		"dist"
 	],

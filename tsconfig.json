@@ -9,7 +9,8 @@
     "strictNullChecks": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true
+    "skipDefaultLibCheck": true,
+		"baseUrl": ".",
   },
 	"exclude": ["**/node_modules", "**/dist"],
 	"references": [{ "path": "./tsconfig.node.json" }]
