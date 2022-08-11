@@ -2,7 +2,7 @@ import { Plugin } from 'vite'
 import { PluginOptions } from './pluginOptions'
 import { getFileSuffix, clearConsole, handleExcludeFile } from './utils'
 
-export default (options: PluginOptions): Plugin => {
+export default (options?: PluginOptions): Plugin => {
   const defaultOptions: PluginOptions = {
     exclude: [],
     suffix: ['js', 'ts', 'tsx', 'jsx', 'vue']
