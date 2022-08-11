@@ -11,7 +11,7 @@ export default (options: PluginOptions): Plugin => {
 
   return {
     name: 'vite-plugin-clear-console',
-    enforce: 'pre',
+    enforce: 'post',
     transform(code: string, id: string) {
       // filter node_modules files
       const nodeModulesReg = /\/node_modules\//g
