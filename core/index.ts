@@ -1,5 +1,13 @@
-export const helloWorld: string = 'Hello World'
+import { Plugin } from 'vite'
 
-export const add = (a: number, b: number): number => {
-  return a + b
+export default (): Plugin => {
+  return {
+    name: 'vite-plugin-clear-console',
+    enforce: 'pre',
+    transform(code: string, id: string) {
+      console.log('code->', code)
+      console.log('id->', id)
+      return code
+    }
+  }
 }

@@ -1,18 +1,19 @@
 {
 	"name": "vite-plugin-clear-console",
 	"version": "0.0.0",
-	"type": "module",
 	"packageManager": "pnpm@7.6.0",
 	"description": "the plugin is used to clear all console output in the production environment",
-	"main": "./dist/bundle.cjs",
+	"main": "./dist/bundle.umd.js",
 	"module": "./dist/bundle.mjs",
-	"types": "./dist/bundle.d.ts",
+	"types": "./dist/index.d.ts",
 	"files": [
 		"dist"
 	],
 	"scripts": {
-		"dev": "rollup --config rollup.config.ts --watch",
-		"build": "rollup --config rollup.config.ts",
+		"dev": "vite build --watch",
+		"build": "vite build",
+		"play:dev": "pnpm -C playground dev",
+		"play:build": "pnpm -C playground build",
 		"release": "standard-version",
 		"prepare": "husky install",
 		"commit": "git-cz"
@@ -48,7 +49,8 @@
 		"prettier": "^2.7.1",
 		"standard-version": "^9.5.0",
 		"typescript": "^4.7.4",
-		"vite": "^3.0.5"
+		"vite": "^3.0.5",
+		"vite-plugin-dts": "^1.4.1"
 	},
 	"lint-staged": {
 		"src/**/*.{js,ts}": [
