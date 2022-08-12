@@ -48,6 +48,14 @@ You can specify excluded files so that the console corresponding to the source f
 
 Source file suffix that should be filtered. Its default value is `['js', 'ts', 'tsx', 'jsx', 'vue']`, and you can overwrite the option.
 
+3. **`inject`**
+
+You can add console to your final product. And finally added to the entry file of the project for simple description.
+
+example：[www.baidu.com](https://www.baidu.com/)
+
+For instance, you can view the playground.
+
 ## License
 
 The Vite plugin is open-sourced software licensed under the [MIT license](LICENSE.md).
