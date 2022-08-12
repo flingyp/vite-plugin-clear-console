@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/flingyp/vite-plugin-clear-console/compare/v0.1.1...v0.2.0) (2022-08-12)
+
+
+### ✨ Features | 新功能
+
+* **inject console:** add console to your final product ([7454c72](https://github.com/flingyp/vite-plugin-clear-console/commit/7454c72266a502ecaaa31f82431868bf3d61412d))
+
 ### [0.1.1](https://github.com/flingyp/vite-plugin-clear-console/compare/v0.1.0...v0.1.1) (2022-08-11)
 
 
