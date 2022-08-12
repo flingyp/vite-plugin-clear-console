@@ -1,6 +1,6 @@
 import { Plugin } from 'vite'
 import { PluginOptions } from './pluginOptions'
-import { getFileSuffix, clearConsole, handleExcludeFile } from './utils'
+import { getFileSuffix, clearConsole, handleExcludeFile, injectConsoleTemplate } from './utils'
 
 export default (options?: PluginOptions): Plugin => {
   const defaultOptions: PluginOptions = {
@@ -27,6 +27,14 @@ export default (options?: PluginOptions): Plugin => {
       // filter not includes suffix files
       const suffixName = getFileSuffix(id) || ''
       if (suffixName === '' || !pluginOptions.suffix?.includes(suffixName)) return code
+
+      // inject template content
+      if (pluginOptions.inject && pluginOptions.inject.template.length !== 0) {
+        const injectFilePath = handleExcludeFile([pluginOptions.inject.path])[0]
+        return id.indexOf(injectFilePath) === -1
+          ? clearConsole(code)
+          : injectConsoleTemplate(clearConsole(code), pluginOptions.inject.template)
+      }
 
       return clearConsole(code)
     }
