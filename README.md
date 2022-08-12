@@ -24,12 +24,10 @@ pnpm install vite-plugin-clear-console -D
 
 ```ts
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
 import clearConsole from 'vite-plugin-clear-console'
 
 export default defineConfig({
   plugins: [
-    vue(),
     {
       ...clearConsole(),
       apply: 'build' // build environment
@@ -44,9 +42,41 @@ export default defineConfig({
 
 You can specify excluded files so that the console corresponding to the source file is not deleted
 
+**Example：**
+
+```ts
+import { defineConfig } from 'vite'
+import clearConsole from 'vite-plugin-clear-console'
+
+export default defineConfig({
+  plugins: [
+    {
+      ...clearConsole({ exclude: ['./src/main.ts', './views/login.tsx'] }),
+      apply: 'build'
+    }
+  ]
+})
+```
+
 2. **`suffix`**
 
 Source file suffix that should be filtered. Its default value is `['js', 'ts', 'tsx', 'jsx', 'vue']`, and you can overwrite the option.
+
+**Example：**
+
+```ts
+import { defineConfig } from 'vite'
+import clearConsole from 'vite-plugin-clear-console'
+
+export default defineConfig({
+  plugins: [
+    {
+      ...clearConsole({ suffix: ['js', 'ts', 'vue'] }),
+      apply: 'build'
+    }
+  ]
+})
+```
 
 3. **`inject`**
 
