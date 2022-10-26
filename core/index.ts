@@ -1,6 +1,6 @@
 import { Plugin } from 'vite'
 import { PluginOptions } from './pluginOptions'
-import { getFileSuffix, clearConsole, handleExcludeFile, injectConsoleTemplate } from './utils'
+import { clearConsole, getFileSuffix, handleExcludeFile, injectConsoleTemplate } from './utils'
 
 export default (options?: PluginOptions): Plugin => {
   const defaultOptions: PluginOptions = {
@@ -12,6 +12,7 @@ export default (options?: PluginOptions): Plugin => {
   return {
     name: 'vite-plugin-clear-console',
     enforce: 'post',
+    apply: 'build',
     transform(code: string, id: string) {
       // filter node_modules files
       const nodeModulesReg = /\/node_modules\//g
