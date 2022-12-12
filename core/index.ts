@@ -1,13 +1,13 @@
 import { Plugin } from 'vite'
-import { PluginOptions } from './pluginOptions'
+import { Options } from './pluginOptions'
 import { clearConsole, getFileSuffix, handleExcludeFile, injectConsoleTemplate } from './utils'
 
-export default (options?: PluginOptions): Plugin => {
-  const defaultOptions: PluginOptions = {
+export default (options?: Options): Plugin => {
+  const defaultOptions: Options = {
     exclude: [],
     suffix: ['js', 'ts', 'tsx', 'jsx', 'vue']
   }
-  const pluginOptions: PluginOptions = Object.assign(defaultOptions, options)
+  const pluginOptions: Options = Object.assign(defaultOptions, options)
 
   return {
     name: 'vite-plugin-clear-console',
