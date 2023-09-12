@@ -12,9 +12,7 @@ export const getFileSuffix = (filePath: string) => filePath.split('?')[0].split(
  */
 export const handleExcludeFile = (exclude: string[]) => {
   let newExclude = []
-  newExclude = exclude.map(item => {
-    return item.replace(/^\.\//g, '/')
-  })
+  newExclude = exclude.map((item) => item.replace(/^\.\//g, '/'))
   return newExclude
 }
 
@@ -39,7 +37,7 @@ export const clearConsole = (code: string) => {
  */
 export const injectConsoleTemplate = (code: string, template: string[]) => {
   let newCode = code
-  template.forEach(log => {
+  template.forEach((log) => {
     newCode += `\n${log}\n`
   })
   return newCode

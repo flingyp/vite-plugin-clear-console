@@ -7,8 +7,8 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'core/index.ts'),
       name: 'bundle',
-      fileName: 'bundle'
-    }
+      fileName: 'bundle',
+    },
   },
-  plugins: [dts({ include: './core', outputDir: ['dist/types'] })]
+  plugins: [dts({ include: './core', outputDir: ['dist/types'] })],
 })

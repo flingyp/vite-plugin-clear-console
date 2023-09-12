@@ -1,11 +1,13 @@
 import { Plugin } from 'vite'
 import { Options } from './pluginOptions'
-import { clearConsole, getFileSuffix, handleExcludeFile, injectConsoleTemplate } from './utils'
+import {
+  clearConsole, getFileSuffix, handleExcludeFile, injectConsoleTemplate,
+} from './utils'
 
 export default (options?: Options): Plugin => {
   const defaultOptions: Options = {
     exclude: [],
-    suffix: ['js', 'ts', 'tsx', 'jsx', 'vue']
+    suffix: ['js', 'ts', 'tsx', 'jsx', 'vue'],
   }
   const pluginOptions: Options = Object.assign(defaultOptions, options)
 
@@ -19,10 +21,8 @@ export default (options?: Options): Plugin => {
       if (nodeModulesReg.test(id)) return code
 
       // exclude files
-      pluginOptions.exclude = handleExcludeFile(pluginOptions.exclude!)
-      const isIncludeExcludeFile = pluginOptions.exclude.some(item => {
-        return id.indexOf(item) !== -1
-      })
+      pluginOptions.exclude = pluginOptions.exclude && handleExcludeFile(pluginOptions.exclude)
+      const isIncludeExcludeFile = pluginOptions.exclude?.some((item) => id.indexOf(item) !== -1)
       if (isIncludeExcludeFile) return code
 
       // filter not includes suffix files
@@ -38,6 +38,6 @@ export default (options?: Options): Plugin => {
       }
 
       return clearConsole(code)
-    }
+    },
   }
 }

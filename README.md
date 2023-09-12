@@ -30,9 +30,9 @@ export default defineConfig({
   plugins: [
     {
       ...clearConsole(),
-      apply: 'build' // build environment
-    }
-  ]
+      apply: 'build', // build environment
+    },
+  ],
 })
 ```
 
@@ -52,9 +52,9 @@ export default defineConfig({
   plugins: [
     {
       ...clearConsole({ exclude: ['./src/main.ts', './views/login.tsx'] }),
-      apply: 'build'
-    }
-  ]
+      apply: 'build',
+    },
+  ],
 })
 ```
 
@@ -72,9 +72,9 @@ export default defineConfig({
   plugins: [
     {
       ...clearConsole({ suffix: ['js', 'ts', 'vue'] }),
-      apply: 'build'
-    }
-  ]
+      apply: 'build',
+    },
+  ],
 })
 ```
 

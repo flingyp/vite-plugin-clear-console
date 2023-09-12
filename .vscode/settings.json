@@ -1,9 +1,20 @@
 {
-    "typescript.tsdk": "node_modules\\typescript\\lib",
-    "recommendations": [
-      "Vue.volar"
-    ],
-    "cSpell.words": [
-      "pnpm"
-    ]
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": false
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml"
+  ]
 }
